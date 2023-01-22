@@ -55,6 +55,7 @@
             this.encodeButton.TabIndex = 1;
             this.encodeButton.Text = "Encode";
             this.encodeButton.UseVisualStyleBackColor = true;
+            this.encodeButton.Click += new System.EventHandler(this.encodeButton_Click);
             // 
             // label1
             // 
