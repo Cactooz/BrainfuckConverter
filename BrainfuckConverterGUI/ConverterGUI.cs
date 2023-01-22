@@ -11,16 +11,10 @@ namespace BrainfuckConverterGUI {
 			try {
 				string inputData = inputText.Text;
 
-				//Set up 10 slot memory: rest, 91-96, 123-126, 128-191, 58-64, 48-57, 65-90, 97-122, 32-48, 192-255
-				//Cell indexes:			  0      1       2        3       4      5      6      7       8       9
-				string setupCode = "++++++++++[>+++++++++>++++++++++++>+++++++++++++>++++++>+++++>++++++++>+++++++++++>++++>++++++++++++++++++++++<<<<<<<<<-]>+>+++>>>>";
-				int[] memory = { 0, 91, 123, 130, 60, 50, 80, 110, 40, 220 };
-				int pointer = 6;
-				string inputCode = "";
+                string inputCode = "";
+                Converter converter = new Converter();
 
-				Converter converter = new Converter(memory, pointer);
-
-				foreach(char inputChar in inputData) {
+                foreach(char inputChar in inputData) {
 					if(inputChar >= 65 && inputChar <= 90)
 						inputCode += converter.Encode(inputChar, 6);
 					else if(inputChar >= 97 && inputChar <= 122)
@@ -46,7 +40,7 @@ namespace BrainfuckConverterGUI {
 				}
 
 				outputText.Show();
-				outputText.Text = setupCode + inputCode;
+				outputText.Text = converter.Setup + inputCode;
 
 			} catch(Exception error) {
 				MessageBox.Show(error.Message);
