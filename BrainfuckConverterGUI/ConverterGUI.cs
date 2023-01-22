@@ -12,6 +12,7 @@ namespace BrainfuckConverterGUI {
                 Converter converter = new Converter();
 
 				outputText.Text = converter.Encode(inputText.Text);
+				outputLabel.Show();
                 outputText.Show();
             } catch(Exception error) {
 				MessageBox.Show(error.Message);
