@@ -77,22 +77,29 @@
         public string GetCode(char input, int cell) {
 			string output = "";
 
-			while(pointer < cell) {
-				output += ">";
-				pointer++;
-			}
-			while(pointer > cell) {
-				output += "<";
-				pointer--;
-			}
-			while(memory[pointer] < input) {
-				output += "+";
-				memory[pointer]++;
-			}
-			while(memory[pointer] > input) {
-				output += "-";
-				memory[pointer]--;
-			}
+			//Move to the correct memory cell
+			while(pointer != cell) {
+				if(pointer < cell) {
+                    output += ">";
+                    pointer++;
+                } else {
+                    output += "<";
+                    pointer--;
+                }
+            }
+
+			//Increment/Decrement the value of the memory cell to correct Extended ASCII value
+			while(memory[pointer] != input) {
+                if(memory[pointer] < input) {
+                    output += "+";
+                    memory[pointer]++;
+                } else {
+                    output += "-";
+                    memory[pointer]--;
+                }
+            }
+
+			//Print the character
 			output += ".";
 
 			return output;
