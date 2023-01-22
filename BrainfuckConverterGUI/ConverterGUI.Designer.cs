@@ -44,6 +44,7 @@
             this.inputText.Size = new System.Drawing.Size(450, 100);
             this.inputText.TabIndex = 0;
             this.inputText.Text = "";
+            this.inputText.TextChanged += new System.EventHandler(this.inputText_TextChanged);
             // 
             // encodeButton
             // 
@@ -101,6 +102,7 @@
             // 
             this.decodeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.decodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.decodeButton.Enabled = false;
             this.decodeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.decodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.decodeButton.Location = new System.Drawing.Point(350, 205);

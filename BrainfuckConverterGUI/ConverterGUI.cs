@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace BrainfuckConverterGUI {
@@ -36,6 +37,17 @@ namespace BrainfuckConverterGUI {
 		private void copyButton_Click(object sender, EventArgs e) {
 			try {
 				Clipboard.SetText(outputText.Text);
+			} catch(Exception error) {
+				MessageBox.Show(error.Message);
+			}
+		}
+
+		private void inputText_TextChanged(object sender, EventArgs e) {
+			try {
+				if(Regex.IsMatch(inputText.Text, @"[-+.<>[\]]"))
+					decodeButton.Enabled = true;
+				else
+					decodeButton.Enabled = false;
 			} catch(Exception error) {
 				MessageBox.Show(error.Message);
 			}
