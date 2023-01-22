@@ -1,4 +1,6 @@
-﻿namespace BrainfuckConverterGUI {
+﻿using System.Collections.Generic;
+
+namespace BrainfuckConverterGUI {
 	internal class Converter {
 		/// <summary>
 		/// The BRAINFUCK working memory cells with their current values.
@@ -36,7 +38,7 @@
 		/// Encode the <paramref name="inputText"/> <see cref="string"/> of Extended ASCII characters into BRAINFUCK code.
 		/// </summary>
 		/// <param name="inputText">The text <see cref="string"/> of Extended ASCII to encode.</param>
-		/// <returns></returns>
+		/// <returns>A <see cref="string"/> with the BRAINFUCK code used to write the <paramref name="inputText"/>.</returns>
 		public string Encode(string inputText) {
 			string output = "";
 
@@ -68,39 +70,115 @@
 			return setup + output;
 		}
 
-        /// <summary>
-        /// Gets a <see cref="string"/> of BRAINFUCK code to print the <paramref name="input"/> character.
-        /// </summary>
-        /// <param name="input">The <see cref="char"/> to get movements for and print.</param>
-        /// <param name="cell">The cell in the memory where the <paramref name="input"/> character exists.</param>
-        /// <returns>A <see cref="string"/> of movements for the BRAINFUCK code.</returns>
-        public string GetCode(char input, int cell) {
+		/// <summary>
+		/// Gets a <see cref="string"/> of BRAINFUCK code to print the <paramref name="input"/> character.
+		/// </summary>
+		/// <param name="input">The <see cref="char"/> to get movements for and print.</param>
+		/// <param name="cell">The cell in the memory where the <paramref name="input"/> character exists.</param>
+		/// <returns>A <see cref="string"/> of movements for the BRAINFUCK code.</returns>
+		private string GetCode(char input, int cell) {
 			string output = "";
 
 			//Move to the correct memory cell
 			while(pointer != cell) {
 				if(pointer < cell) {
-                    output += ">";
-                    pointer++;
-                } else {
-                    output += "<";
-                    pointer--;
-                }
-            }
+					output += ">";
+					pointer++;
+				} else {
+					output += "<";
+					pointer--;
+				}
+			}
 
 			//Increment/Decrement the value of the memory cell to correct Extended ASCII value
 			while(memory[pointer] != input) {
-                if(memory[pointer] < input) {
-                    output += "+";
-                    memory[pointer]++;
-                } else {
-                    output += "-";
-                    memory[pointer]--;
-                }
-            }
+				if(memory[pointer] < input) {
+					output += "+";
+					memory[pointer]++;
+				} else {
+					output += "-";
+					memory[pointer]--;
+				}
+			}
 
 			//Print the character
 			output += ".";
+
+			return output;
+		}
+
+		/// <summary>
+		/// Decode any inputted BRAINFUCK code into a <see cref="string"/> of Extended ASCII characters.
+		/// </summary>
+		/// <param name="inputCode">The BRAINFUCK code to decode.</param>
+		/// <returns>A <see cref="string"/> with the Extended ASCII message from the <paramref name="inputCode"/>.</returns>
+		public string Decode(string inputCode) {
+			//Create temporary working memory
+			List<int> workingMemory = new List<int>{0};
+			int memoryPointer = 0;
+
+			string output = "";
+
+			int i = 0;
+			while(i < inputCode.Length) {
+				switch(inputCode[i]) {
+					case '+': {
+						workingMemory[memoryPointer]++;
+						break;
+					}
+					case '-': {
+						workingMemory[memoryPointer]--;
+						break;
+					}
+					case '>': {
+						memoryPointer++;
+						if(memoryPointer == workingMemory.Count)
+							workingMemory.Add(0);
+						break;
+					}
+					case '<': {
+						memoryPointer--;
+						if(memoryPointer < 0) {
+							workingMemory.Insert(0, 0);
+							memoryPointer = 0;
+						}
+						break;
+					}
+					case '[': {
+						if(workingMemory[memoryPointer] == 0) {
+							int loopCounter = 1;
+							while(loopCounter > 0) {
+								i++;
+								if(inputCode[i] == '[') {
+									loopCounter++;
+								} else if(inputCode[i] == ']') {
+									loopCounter--;
+								}
+							}
+						}
+						break;
+					}
+					case ']': {
+						if(workingMemory[memoryPointer] != 0) {
+							int loopCounter = 1;
+							while(loopCounter > 0) {
+								i--;
+								if(inputCode[i] == '[') {
+									loopCounter--;
+								} else if(inputCode[i] == ']') {
+									loopCounter++;
+								}
+							}
+						}
+						break;
+					}
+					case '.': {
+						output += (char)workingMemory[memoryPointer];
+						break;
+					}
+				}
+				i++;
+			}
 
 			return output;
 		}
