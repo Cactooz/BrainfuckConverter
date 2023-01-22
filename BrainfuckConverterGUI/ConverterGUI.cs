@@ -44,6 +44,14 @@ namespace BrainfuckConverterGUI {
 
 		private void inputText_TextChanged(object sender, EventArgs e) {
 			try {
+				if(inputText.Text.Length <= 0) {
+                    encodeButton.Enabled = false;
+					decodeButton.Enabled = false;
+                } else {
+					encodeButton.Enabled = true;
+					decodeButton.Enabled = true;
+				}
+
 				if(Regex.IsMatch(inputText.Text, @"[-+.<>[\]]"))
 					decodeButton.Enabled = true;
 				else

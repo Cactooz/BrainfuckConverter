@@ -50,6 +50,7 @@
             // 
             this.encodeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.encodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.encodeButton.Enabled = false;
             this.encodeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.encodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.encodeButton.Location = new System.Drawing.Point(200, 205);
