@@ -9,12 +9,34 @@ namespace BrainfuckConverterGUI {
 
 		private void encodeButton_Click(object sender, EventArgs e) {
 			try {
-                Converter converter = new Converter();
-
-				outputText.Text = converter.Encode(inputText.Text);
+				Converter encoder = new Converter();
+				outputText.Text = encoder.Encode(inputText.Text);
+				outputLabel.Text = "BRAINFUCK Code Output";
 				outputLabel.Show();
-                outputText.Show();
-            } catch(Exception error) {
+				outputText.Show();
+				copyButton.Show();
+			} catch(Exception error) {
+				MessageBox.Show(error.Message);
+			}
+		}
+
+		private void decodeButton_Click(object sender, EventArgs e) {
+			try {
+				Converter decoder = new Converter();
+				outputText.Text = decoder.Decode(inputText.Text);
+				outputLabel.Text = "Extended ASCII Text Output";
+				outputLabel.Show();
+				outputText.Show();
+				copyButton.Show();
+			} catch(Exception error) {
+				MessageBox.Show(error.Message);
+			}
+		}
+
+		private void copyButton_Click(object sender, EventArgs e) {
+			try {
+				Clipboard.SetText(outputText.Text);
+			} catch(Exception error) {
 				MessageBox.Show(error.Message);
 			}
 		}
