@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConverterGUI));
             this.inputText = new System.Windows.Forms.RichTextBox();
             this.encodeButton = new System.Windows.Forms.Button();
             this.inputLabel = new System.Windows.Forms.Label();
@@ -147,9 +148,10 @@
             this.Controls.Add(this.encodeButton);
             this.Controls.Add(this.inputText);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(450, 550);
             this.Name = "ConverterGUI";
-            this.Text = "BRAINFUCK Converter";
+            this.Text = "BF Converter";
             this.ResumeLayout(false);
             this.PerformLayout();
 
