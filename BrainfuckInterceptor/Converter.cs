@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrainfuckConverterGUI {
+namespace BrainfuckInterceptor {
 	internal class Converter {
 		/// <summary>
 		/// The BRAINFUCK working memory cells with their current values.

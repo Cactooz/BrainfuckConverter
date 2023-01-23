@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<OutputType>WinExe</OutputType>
+	<TargetFramework>net6.0-windows</TargetFramework>
+	<AssemblyVersion>2.0.0.0</AssemblyVersion>
+	<FileVersion>2.0.0.0</FileVersion>
+	<InformationalVersion>2.0.0.0</InformationalVersion>
+	<NeutralLanguage>en</NeutralLanguage>
+	<PackageTags>brainfuck, extended ascii, converter, interpreter</PackageTags>
+	<RepositoryType>git</RepositoryType>
+	<RepositoryUrl>https://github.com/Cactooz/BrainfuckConverter</RepositoryUrl>
+	<Copyright>Cactooz © 2023</Copyright>
+	<PackageIcon>BFI.png</PackageIcon>
+	<Authors>Cactooz</Authors>
+	<Description>Converts Extended ASCII text to Brainfuck code and vise versa.</Description>
+	<Title>Brainfuck ASCII Converter</Title>
+	<ApplicationIcon>img\BFI.ico</ApplicationIcon>
+	<UseWPF>True</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Resource Include="img\BFI.ico" />
+  </ItemGroup>
+
+</Project>
