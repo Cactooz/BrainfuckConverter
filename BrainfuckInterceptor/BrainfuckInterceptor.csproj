@@ -3,9 +3,9 @@
   <PropertyGroup>
 	<OutputType>WinExe</OutputType>
 	<TargetFramework>net6.0-windows</TargetFramework>
-	<AssemblyVersion>2.0.0.0</AssemblyVersion>
-	<FileVersion>2.0.0.0</FileVersion>
-	<InformationalVersion>2.0.0.0</InformationalVersion>
+	<AssemblyVersion>2.0.0</AssemblyVersion>
+	<FileVersion>2.1.0</FileVersion>
+	<InformationalVersion>Dev 2.1.0</InformationalVersion>
 	<NeutralLanguage>en</NeutralLanguage>
 	<PackageTags>brainfuck, extended ascii, converter, interpreter</PackageTags>
 	<RepositoryType>git</RepositoryType>
@@ -17,6 +17,7 @@
 	<Title>Brainfuck ASCII Converter</Title>
 	<ApplicationIcon>img\BFI.ico</ApplicationIcon>
 	<UseWPF>True</UseWPF>
+	<Product>Brainfuck Converter</Product>
   </PropertyGroup>
 
   <ItemGroup>

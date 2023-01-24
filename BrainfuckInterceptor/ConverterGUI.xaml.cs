@@ -9,6 +9,9 @@ namespace BrainfuckInterceptor {
 	public partial class ConverterGUI:Window {
 		public ConverterGUI() {
 			InitializeComponent();
+			OutputLabel.Visibility = Visibility.Collapsed;
+			OutputText.Visibility = Visibility.Collapsed;
+			CopyButton.Visibility = Visibility.Collapsed;
 		}
 
 		private void EncodeButton_Click(object sender, RoutedEventArgs e) {
