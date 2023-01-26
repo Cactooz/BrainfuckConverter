@@ -29,8 +29,8 @@ namespace BrainfuckInterceptor {
 		/// Initializes a new instance of the <see cref="Converter"/> class with default <see cref="memory"/> setup.
 		/// </summary>
 		public Converter() {
-			setup = "++++++++++[>+++++++++>++++++++++++>+++++++++++++>++++++>+++++>++++++++>+++++++++++>++++>++++++++++++++++++++++<<<<<<<<<-]>+>+++>>>>";
-			memory = new int[] { 0, 91, 123, 130, 60, 50, 80, 110, 40, 220 };
+			setup = "++++++++++[>+++++++++>++++++++++++>------------>++++++>+++++>++++++++>+++++++++++>++++>----<<<<<<<<<-]>+>+++>>>>";
+			memory = new int[] { 0, 91, 123, 136, 60, 50, 80, 110, 40, 216 };
 			pointer = 6;
 		}
 
