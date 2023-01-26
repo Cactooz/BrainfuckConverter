@@ -123,11 +123,17 @@ namespace BrainfuckInterceptor {
 			while(i < inputCode.Length) {
 				switch(inputCode[i]) {
 					case '+': {
-						workingMemory[memoryPointer]++;
+						if(workingMemory[memoryPointer] >= 255)
+							workingMemory[memoryPointer] = 0;
+						else
+							workingMemory[memoryPointer]++;
 						break;
 					}
 					case '-': {
-						workingMemory[memoryPointer]--;
+						if(workingMemory[memoryPointer] <= 0)
+							workingMemory[memoryPointer] = 255;
+						else
+							workingMemory[memoryPointer]--;
 						break;
 					}
 					case '>': {
