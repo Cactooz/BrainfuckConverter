@@ -29,8 +29,8 @@ namespace BrainfuckInterceptor {
 		/// Initializes a new instance of the <see cref="Converter"/> class with default <see cref="memory"/> setup.
 		/// </summary>
 		public Converter() {
-			setup = "++++++++++[>+++++++++>++++++++++++>------------>++++++>+++++>++++++++>+++++++++++>++++>----<<<<<<<<<-]>+>+++>>>>";
-			memory = new int[] { 0, 91, 123, 136, 60, 50, 80, 110, 40, 216 };
+			setup = "++++++++++[>-------->+++++++++>++++++++++++>++++++>+++++>++++++++>+++++++++++>++++>----<<<<<<<<<-]>>+>+++>>>";
+			memory = new int[] { 0, 176, 91, 123, 60, 50, 80, 110, 40, 216 };
 			pointer = 6;
 		}
 
@@ -55,13 +55,13 @@ namespace BrainfuckInterceptor {
 					output += GetCode(inputChar, 4);
 				else if(inputChar >= 192 && inputChar <= 255)
 					output += GetCode(inputChar, 9);
-				else if(inputChar >= 128 && inputChar <= 191)
-					output += GetCode(inputChar, 3);
 				else if(inputChar >= 123 && inputChar <= 126)
-					output += GetCode(inputChar, 2);
+					output += GetCode(inputChar, 3);
 				else if(inputChar >= 91 && inputChar <= 96)
-					output += GetCode(inputChar, 1);
-				else if(inputChar < 0 || inputChar > 255)
+					output += GetCode(inputChar, 2);
+                else if(inputChar >= 160 && inputChar <= 191)
+                    output += GetCode(inputChar, 1);
+                else if(inputChar < 0 || inputChar > 255)
 					continue;
 				else
 					output += GetCode(inputChar, 0);
