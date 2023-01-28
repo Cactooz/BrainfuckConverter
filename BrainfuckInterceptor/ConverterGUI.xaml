@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="425" MinWidth="300" MinHeight="425" Icon="/img/BFI.ico" Background="#FF131313" Foreground="White">
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="425" MinWidth="300" MinHeight="425" Icon="Content/Images/BFI.ico" Background="#FF131313" Foreground="White">
 	
 	<Window.Resources>
 		<ResourceDictionary>

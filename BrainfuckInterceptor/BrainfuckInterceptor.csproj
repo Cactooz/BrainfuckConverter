@@ -15,13 +15,13 @@
 	<Authors>Cactooz</Authors>
 	<Description>Converts Extended ASCII text to Brainfuck code and vise versa.</Description>
 	<Title>Brainfuck ASCII Converter</Title>
-	<ApplicationIcon>img\BFI.ico</ApplicationIcon>
+	<ApplicationIcon>Content\Images\BFI.ico</ApplicationIcon>
 	<UseWPF>True</UseWPF>
 	<Product>Brainfuck Converter</Product>
   </PropertyGroup>
 
   <ItemGroup>
-	<Resource Include="img\BFI.ico" />
+	<Resource Include="Content\Images\BFI.ico" />
   </ItemGroup>
 
 </Project>
