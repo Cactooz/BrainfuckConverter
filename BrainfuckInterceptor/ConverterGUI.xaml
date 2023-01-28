@@ -5,15 +5,15 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="425" MinWidth="300" MinHeight="425" Icon="Content/Images/BFI.ico" Background="#FF131313" Foreground="White">
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="425" MinWidth="300" MinHeight="425" Icon="/Content/Images/BFI.ico" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 	
-	<Window.Resources>
+	<!--<Window.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Styling.xaml" />
+				<ResourceDictionary Source="Skins/Light.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
-	</Window.Resources>
+	</Window.Resources>-->
 	
 	<Grid>
 		<Grid.RowDefinitions>
@@ -42,6 +42,8 @@
 		<TextBox x:Name="OutputText" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" Height="100" MinHeight="50"
 				AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>
 		<Button x:Name="CopyButton" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Content="Copy Output" HorizontalAlignment="Center" Width="120" MinHeight="40" Click="CopyButton_Click"/>
+
+		<Button x:Name="ThemeButton" Grid.Column="4" Grid.Row="0" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>
 
 	</Grid>
 </Window>
