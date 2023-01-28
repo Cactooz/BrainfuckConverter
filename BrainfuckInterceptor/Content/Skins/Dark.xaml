@@ -1,9 +1,24 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<!--Color Variables-->
+	<SolidColorBrush x:Key="Background" Color="#FF131313"/>
+	<SolidColorBrush x:Key="Foreground" Color="#FFB0B0B0"/>
+	<SolidColorBrush x:Key="Text" Color="#FFE6E6E6"/>
+
+	<SolidColorBrush x:Key="TextboxBackground" Color="#FF131313"/>
+	<SolidColorBrush x:Key="TextboxForeground" Color="#FFB0B0B0"/>
+
+	<SolidColorBrush x:Key="ButtonBackground" Color="#FF252525"/>
+	<SolidColorBrush x:Key="ButtonForeground" Color="#FFB0B0B0"/>
+	<SolidColorBrush x:Key="ButtonDisabledBackground" Color="#FF181818"/>
+	<SolidColorBrush x:Key="ButtonDisabledForeground" Color="#FF303030"/>
+	<SolidColorBrush x:Key="ButtonPressedBackground" Color="#FF202020"/>
 	
+	<!--Styling-->
 	<Style TargetType="Button">
-		<Setter Property="Background" Value="#FF252525"/>
-		<Setter Property="Foreground" Value="#FFB0B0B0"/>
+		<Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+		<Setter Property="Foreground" Value="{StaticResource ButtonForeground}"/>
 		<Setter Property="Cursor" Value="Hand"/>
 
 		<Setter Property="Template">
@@ -18,20 +33,20 @@
 
 		<Style.Triggers>
 			<Trigger Property="IsEnabled" Value="False">
-				<Setter Property="Background" Value="#FF181818"/>
-				<Setter Property="Foreground" Value="#FF303030"/>
+				<Setter Property="Background" Value="{StaticResource ButtonDisabledBackground}"/>
+				<Setter Property="Foreground" Value="{StaticResource ButtonDisabledForeground}"/>
 			</Trigger>
 
 			<Trigger Property="IsPressed" Value="True">
-				<Setter Property="Background" Value="#FF202020"/>
+				<Setter Property="Background" Value="{StaticResource ButtonPressedBackground}"/>
 			</Trigger>
 		</Style.Triggers>
 	</Style>
 
 	<Style TargetType="TextBox">
-		<Setter Property="Background" Value="#FF131313"/>
-		<Setter Property="Foreground" Value="#FFB0B0B0"/>
-		<Setter Property="BorderBrush" Value="#FFB0B0B0"/>
+		<Setter Property="Background" Value="{StaticResource TextboxBackground}"/>
+		<Setter Property="Foreground" Value="{StaticResource TextboxForeground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource TextboxForeground}"/>
 		<Setter Property="Cursor" Value="IBeam"/>
 
 		<!--Disable blue highlight border-->
@@ -47,14 +62,14 @@
 
 		<Style.Triggers>
 			<Trigger Property="IsReadOnly" Value="True">
-				<Setter Property="BorderBrush" Value="#FF303030"/>
+				<Setter Property="BorderBrush" Value="{StaticResource ButtonDisabledForeground}"/>
 				<Setter Property="Cursor" Value="Arrow"/>
 			</Trigger>
 		</Style.Triggers>
 	</Style>
 
 	<Style TargetType="Label">
-		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="Foreground" Value="{StaticResource Text}"/>
 	</Style>
 	
 </ResourceDictionary>

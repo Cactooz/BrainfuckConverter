@@ -26,22 +26,22 @@ namespace BrainfuckInterceptor {
 			catch(Exception error) {
 				MessageBox.Show(error.Message);
 			}
-        }
-        private void DecodeButton_Click(object sender, RoutedEventArgs e) {
-            try {
-                Converter decoder = new Converter();
-                OutputText.Text = decoder.Decode(InputText.Text);
-                OutputLabel.Content = "Extended ASCII Text Output";
-                OutputLabel.Visibility = Visibility.Visible;
-                OutputText.Visibility = Visibility.Visible;
-                CopyButton.Visibility = Visibility.Visible;
-            }
-            catch(Exception error) {
-                MessageBox.Show(error.Message);
-            }
-        }
+		}
+		private void DecodeButton_Click(object sender, RoutedEventArgs e) {
+			try {
+				Converter decoder = new Converter();
+				OutputText.Text = decoder.Decode(InputText.Text);
+				OutputLabel.Content = "Extended ASCII Text Output";
+				OutputLabel.Visibility = Visibility.Visible;
+				OutputText.Visibility = Visibility.Visible;
+				CopyButton.Visibility = Visibility.Visible;
+			}
+			catch(Exception error) {
+				MessageBox.Show(error.Message);
+			}
+		}
 
-        private void CopyButton_Click(object sender, RoutedEventArgs e) {
+		private void CopyButton_Click(object sender, RoutedEventArgs e) {
 			try {
 				Clipboard.SetText(OutputText.Text);
 			}
@@ -68,6 +68,19 @@ namespace BrainfuckInterceptor {
 			}
 			catch(Exception error) {
 				MessageBox.Show(error.Message);
+			}
+		}
+
+		private void ThemeButton_Click(object sender, RoutedEventArgs e) {
+			Skin currentSkin = App.Skin;
+
+			switch(currentSkin) {
+				case Skin.Light:
+					((App)Application.Current).ChangeSkin(Skin.Dark);
+					break;
+				case Skin.Dark:
+					((App)Application.Current).ChangeSkin(Skin.Light);
+					break;
 			}
 		}
 	}
