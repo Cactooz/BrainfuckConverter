@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace BrainfuckInterceptor {
@@ -7,81 +6,46 @@ namespace BrainfuckInterceptor {
 	/// Interaction logic for ConverterGUI.xaml
 	/// </summary>
 	public partial class ConverterGUI:Window {
+
+		Uri converterUI = new Uri("Views/ConverterUI.xaml", UriKind.Relative);
+
+		private enum Views { converter }
+		Views currentView = Views.converter;
+
 		public ConverterGUI() {
 			InitializeComponent();
-			OutputLabel.Visibility = Visibility.Collapsed;
-			OutputText.Visibility = Visibility.Collapsed;
-			CopyButton.Visibility = Visibility.Collapsed;
-		}
+        }
 
-		private void EncodeButton_Click(object sender, RoutedEventArgs e) {
-			try {
-				Converter encoder = new Converter();
-				OutputText.Text = encoder.Encode(InputText.Text);
-				OutputLabel.Content = "BRAINFUCK Code Output";
-				OutputLabel.Visibility = Visibility.Visible;
-				OutputText.Visibility = Visibility.Visible;
-				CopyButton.Visibility = Visibility.Visible;
-			}
-			catch(Exception error) {
-				MessageBox.Show(error.Message);
-			}
-		}
-		private void DecodeButton_Click(object sender, RoutedEventArgs e) {
-			try {
-				Converter decoder = new Converter();
-				OutputText.Text = decoder.Decode(InputText.Text);
-				OutputLabel.Content = "Extended ASCII Text Output";
-				OutputLabel.Visibility = Visibility.Visible;
-				OutputText.Visibility = Visibility.Visible;
-				CopyButton.Visibility = Visibility.Visible;
-			}
-			catch(Exception error) {
-				MessageBox.Show(error.Message);
-			}
-		}
+        private void CloseButton_Click(object sender, RoutedEventArgs e) {
+			Close();
+        }
 
-		private void CopyButton_Click(object sender, RoutedEventArgs e) {
-			try {
-				Clipboard.SetText(OutputText.Text);
-			}
-			catch(Exception error) {
-				MessageBox.Show(error.Message);
-			}
-		}
-
-		private void InputText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) {
-			try {
-				if(InputText.Text.Length <= 0) {
-					EncodeButton.IsEnabled = false;
-					DecodeButton.IsEnabled = false;
-				}
-				else {
-					EncodeButton.IsEnabled = true;
-					DecodeButton.IsEnabled = true;
-				}
-
-				if(Regex.IsMatch(InputText.Text, @"[-+.<>[\]]"))
-					DecodeButton.IsEnabled = true;
-				else
-					DecodeButton.IsEnabled = false;
-			}
-			catch(Exception error) {
-				MessageBox.Show(error.Message);
-			}
-		}
-
-		private void ThemeButton_Click(object sender, RoutedEventArgs e) {
-			Skin currentSkin = App.Skin;
-
-			switch(currentSkin) {
-				case Skin.Light:
-					((App)Application.Current).ChangeSkin(Skin.Dark);
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e) {
+			switch(WindowState) {
+				case WindowState.Normal:
+					WindowState = WindowState.Maximized;
 					break;
-				case Skin.Dark:
-					((App)Application.Current).ChangeSkin(Skin.Light);
+				case WindowState.Maximized:
+					WindowState = WindowState.Normal;
 					break;
-			}
-		}
-	}
+            }
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e) {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void ThemeButton_Click(object sender, RoutedEventArgs e) {
+            Skin currentSkin = App.Skin;
+
+            switch(currentSkin) {
+                case Skin.Light:
+                ((App)Application.Current).ChangeSkin(Skin.Dark);
+                break;
+                case Skin.Dark:
+                ((App)Application.Current).ChangeSkin(Skin.Light);
+                break;
+            }
+        }
+    }
 }

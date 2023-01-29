@@ -5,45 +5,19 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="425" MinWidth="300" MinHeight="425" Icon="/Content/Images/BFI.ico" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
-	
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
+
 	<!--<Window.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Skins/Light.xaml" />
+				<ResourceDictionary Source="Content/Skins/Dark.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Window.Resources>-->
 	
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="30"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="30"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="10"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="10"/>
-			<ColumnDefinition Width="30*"/>
-			<ColumnDefinition Width="100"/>
-			<ColumnDefinition Width="100"/>
-			<ColumnDefinition Width="30*"/>
-			<ColumnDefinition Width="10"/>
-		</Grid.ColumnDefinitions>
-		<Label x:Name="InputLabel" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="0" Content="Input"/>
-		<TextBox x:Name="InputText" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" Height="100" MinHeight="50"
-				AcceptsReturn="True" TextWrapping="Wrap" TextChanged="InputText_TextChanged"/>
-		<Button x:Name="EncodeButton" Grid.Column="2" Grid.Row="2" Content="Encode" HorizontalAlignment="Left" Width="90" MinHeight="40" Click="EncodeButton_Click" IsEnabled="False"/>
-		<Button x:Name="DecodeButton" Grid.Column="3" Grid.Row="2" Content="Decode" HorizontalAlignment="Left" Width="90" MinHeight="40" Margin="10,0,0,0" Click="DecodeButton_Click" IsEnabled="False"/>
-		<Label x:Name="OutputLabel" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" Content="Output"/>
-		<TextBox x:Name="OutputText" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" Height="100" MinHeight="50"
-				AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>
-		<Button x:Name="CopyButton" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Content="Copy Output" HorizontalAlignment="Center" Width="120" MinHeight="40" Click="CopyButton_Click"/>
+		<Frame x:Name="ViewFrame" Grid.Column="1" Grid.Row="1" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
 
-		<Button x:Name="ThemeButton" Grid.Column="4" Grid.Row="0" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>
-
+		<!--<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>-->
 	</Grid>
 </Window>
