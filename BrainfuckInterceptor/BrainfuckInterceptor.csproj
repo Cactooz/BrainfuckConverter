@@ -21,7 +21,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+	<Resource Include="Content\Images\about.png" />
 	<Resource Include="Content\Images\BFI.ico" />
+	<Resource Include="Content\Images\close.png" />
+	<Resource Include="Content\Images\convert.png" />
+	<Resource Include="Content\Images\fullscreen.png" />
+	<Resource Include="Content\Images\minimize.png" />
+	<Resource Include="Content\Images\settings.png" />
+	<Resource Include="Content\Images\window.png" />
   </ItemGroup>
 
 </Project>
