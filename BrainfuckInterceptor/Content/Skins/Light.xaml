@@ -14,7 +14,16 @@
 	<SolidColorBrush x:Key="ButtonDisabledBackground" Color="#FFEEEEEE"/>
 	<SolidColorBrush x:Key="ButtonDisabledForeground" Color="#FFD0D0D0"/>
 	<SolidColorBrush x:Key="ButtonPressedBackground" Color="#FFBFBFBF"/>
-	
+
+	<!--Icon Images-->
+	<BitmapImage x:Key="AboutIcon" UriSource="../Images/Icons/Dark/about.png"/>
+	<BitmapImage x:Key="ConvertIcon" UriSource="../Images/Icons/Dark/convert.png"/>
+	<BitmapImage x:Key="CloseIcon" UriSource="../Images/Icons/Dark/close.png"/>
+	<BitmapImage x:Key="FullscreenIcon" UriSource="../Images/Icons/Dark/fullscreen.png"/>
+	<BitmapImage x:Key="MinimizeIcon" UriSource="../Images/Icons/Dark/minimize.png"/>
+	<BitmapImage x:Key="SettingsIcon" UriSource="../Images/Icons/Dark/settings.png"/>
+	<BitmapImage x:Key="WindowedIcon" UriSource="../Images/Icons/Dark/windowed.png"/>
+
 	<!--Styling-->
 	<Style TargetType="Button">
 		<Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
