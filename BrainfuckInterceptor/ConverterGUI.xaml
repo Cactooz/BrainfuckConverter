@@ -5,7 +5,8 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" WindowStyle="None" AllowsTransparency="True"
+		Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<!--<Window.Resources>
 		<ResourceDictionary>
@@ -16,8 +17,30 @@
 	</Window.Resources>-->
 	
 	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition Height="10*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="50"/>
+			<ColumnDefinition Width="10*"/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="MinimizeButton_Click">
+				<Image x:Name="MinimizeImage" Source="{DynamicResource MinimizeIcon}"/>
+			</Button>
+			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="FullscreenButton_Click">
+				<Image x:Name="FullscreenImage" Source="{DynamicResource FullscreenIcon}"/>
+			</Button>
+			<Button x:Name="CloseButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="CloseButton_Click">
+				<Image x:Name="CloseImage" Source="{DynamicResource CloseIcon}"/>
+			</Button>
+		</StackPanel>
+
 		<Frame x:Name="ViewFrame" Grid.Column="1" Grid.Row="1" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
 
-		<!--<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>-->
+		<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>
+		
 	</Grid>
 </Window>

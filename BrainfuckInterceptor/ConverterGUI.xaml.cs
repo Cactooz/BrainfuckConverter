@@ -20,7 +20,7 @@ namespace BrainfuckInterceptor {
 			Close();
         }
 
-        private void MaximizeButton_Click(object sender, RoutedEventArgs e) {
+        private void FullscreenButton_Click(object sender, RoutedEventArgs e) {
 			switch(WindowState) {
 				case WindowState.Normal:
 					WindowState = WindowState.Maximized;
