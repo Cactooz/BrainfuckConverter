@@ -18,7 +18,7 @@
 	
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="20"/>
+			<RowDefinition Height="30"/>
 			<RowDefinition Height="10*"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
@@ -27,20 +27,32 @@
 		</Grid.ColumnDefinitions>
 
 		<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="MinimizeButton_Click">
-				<Image x:Name="MinimizeImage" Source="{DynamicResource MinimizeIcon}"/>
+			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="MinimizeButton_Click">
+				<Image x:Name="MinimizeImage" Source="{DynamicResource MinimizeIcon}" Width="20"/>
 			</Button>
-			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="FullscreenButton_Click">
-				<Image x:Name="FullscreenImage" Source="{DynamicResource FullscreenIcon}"/>
+			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="FullscreenButton_Click">
+				<Image x:Name="FullscreenImage" Source="{DynamicResource FullscreenIcon}" Width="20"/>
 			</Button>
-			<Button x:Name="CloseButton" HorizontalAlignment="Right" Width="20" Margin="0,00,10,0" Background="Transparent" Click="CloseButton_Click">
-				<Image x:Name="CloseImage" Source="{DynamicResource CloseIcon}"/>
+			<Button x:Name="CloseButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="CloseButton_Click">
+				<Image x:Name="CloseImage" Source="{DynamicResource CloseIcon}"  Width="20"/>
 			</Button>
 		</StackPanel>
 
 		<Frame x:Name="ViewFrame" Grid.Column="1" Grid.Row="1" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
 
-		<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>
+		<StackPanel Grid.Row="2" Orientation="Vertical">
+			<Button x:Name="ConverterButton" Width="50" Height="50" Background="Transparent" Click="ConverterButton_Click">
+				<Image Source="{DynamicResource ConvertIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			</Button>
+			<Button x:Name="SettingsButton" Width="50" Height="50" Background="Transparent" Click="SettingsButton_Click">
+				<Image Source="{DynamicResource SettingsIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			</Button>
+			<Button x:Name="AboutButton" Width="50" Height="50" Background="Transparent" Click="AboutButton_Click">
+				<Image Source="{DynamicResource AboutIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			</Button>
+		</StackPanel>
+		
+		<!--<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>-->
 		
 	</Grid>
 </Window>

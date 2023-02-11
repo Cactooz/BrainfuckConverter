@@ -8,9 +8,8 @@ namespace BrainfuckInterceptor {
 	public partial class ConverterGUI:Window {
 
 		Uri converterUI = new Uri("Views/ConverterUI.xaml", UriKind.Relative);
-
-		private enum Views { converter }
-		Views currentView = Views.converter;
+        Uri settingsUI = new Uri("Views/SettingsUI.xaml", UriKind.Relative);
+        Uri aboutUI = new Uri("Views/AboutUI.xaml", UriKind.Relative);
 
 		public ConverterGUI() {
 			InitializeComponent();
@@ -46,6 +45,18 @@ namespace BrainfuckInterceptor {
                 ((App)Application.Current).ChangeSkin(Skin.Light);
                 break;
             }
+        }
+
+        private void ConverterButton_Click(object sender, RoutedEventArgs e) {
+            ViewFrame.Source = converterUI;
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e) {
+            ViewFrame.Source = settingsUI;
+        }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e) {
+            ViewFrame.Source = aboutUI;
         }
     }
 }
