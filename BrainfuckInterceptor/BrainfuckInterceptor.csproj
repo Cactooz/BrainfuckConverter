@@ -21,14 +21,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<Resource Include="Content\Images\about.png" />
-	<Resource Include="Content\Images\BFI.ico" />
-	<Resource Include="Content\Images\close.png" />
-	<Resource Include="Content\Images\convert.png" />
-	<Resource Include="Content\Images\fullscreen.png" />
-	<Resource Include="Content\Images\minimize.png" />
-	<Resource Include="Content\Images\settings.png" />
-	<Resource Include="Content\Images\window.png" />
+    <Resource Include="Content\Images\Icons\Color\about.png" />
+    <Resource Include="Content\Images\Icons\Color\close.png" />
+    <Resource Include="Content\Images\Icons\Color\convert.png" />
+    <Resource Include="Content\Images\Icons\Color\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Color\minimize.png" />
+    <Resource Include="Content\Images\Icons\Color\settings.png" />
+    <Resource Include="Content\Images\Icons\Color\windowed.png" />
+    <Resource Include="Content\Images\Icons\Dark\about.png" />
+    <Resource Include="Content\Images\Icons\Dark\close.png" />
+    <Resource Include="Content\Images\Icons\Dark\convert.png" />
+    <Resource Include="Content\Images\Icons\Dark\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Dark\minimize.png" />
+    <Resource Include="Content\Images\Icons\Dark\settings.png" />
+    <Resource Include="Content\Images\Icons\Dark\windowed.png" />
+    <Resource Include="Content\Images\Icons\Light\about.png" />
+    <Resource Include="Content\Images\Icons\Light\close.png" />
+    <Resource Include="Content\Images\Icons\Light\convert.png" />
+    <Resource Include="Content\Images\Icons\Light\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Light\minimize.png" />
+    <Resource Include="Content\Images\Icons\Light\settings.png" />
+    <Resource Include="Content\Images\Icons\Light\windowed.png" />
   </ItemGroup>
 
 </Project>
