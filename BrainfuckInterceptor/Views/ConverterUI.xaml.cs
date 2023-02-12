@@ -65,7 +65,7 @@ namespace BrainfuckInterceptor.Views
                     DecodeButton.IsEnabled = true;
                 }
 
-                if(Regex.IsMatch(InputText.Text, @"[-+.<>[\]]"))
+                if(Regex.IsMatch(InputText.Text, @"^[-+.<>[\]]+$"))
                     DecodeButton.IsEnabled = true;
                 else
                     DecodeButton.IsEnabled = false;
