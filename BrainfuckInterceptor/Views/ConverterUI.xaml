@@ -11,11 +11,11 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="30"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="10*"/>
+			<RowDefinition Height="40"/>
 			<RowDefinition Height="30"/>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="10*"/>
+			<RowDefinition Height="40"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="10*"/>
@@ -25,12 +25,12 @@
 		</Grid.ColumnDefinitions>
 
 		<Label x:Name="InputLabel" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Content="Input"/>
-		<TextBox x:Name="InputText" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" Height="100" MinHeight="70"
+		<TextBox x:Name="InputText" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" MinHeight="70"
 				AcceptsReturn="True" TextWrapping="Wrap" TextChanged="InputText_TextChanged"/>
 		<Button x:Name="EncodeButton" Grid.Column="1" Grid.Row="2" Content="Encode" HorizontalAlignment="Left" Width="90" MinHeight="40" Click="EncodeButton_Click" IsEnabled="False"/>
 		<Button x:Name="DecodeButton" Grid.Column="2" Grid.Row="2" Content="Decode" HorizontalAlignment="Right" Width="90" MinHeight="40" Click="DecodeButton_Click" IsEnabled="False"/>
 		<Label x:Name="OutputLabel" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="3" Content="Output"/>
-		<TextBox x:Name="OutputText" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" Height="100" MinHeight="70"
+		<TextBox x:Name="OutputText" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" Margin="0,0,0,10" Padding="5" MinHeight="70"
 				AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>
 		<Button x:Name="CopyButton" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Copy Output" HorizontalAlignment="Center" Width="120" MinHeight="40" Click="CopyButton_Click"/>
 	</Grid>
