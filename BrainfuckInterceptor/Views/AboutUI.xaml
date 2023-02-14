@@ -9,6 +9,29 @@
       Title="AboutUI" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<Grid>
-		<Label Content="About" />
+		<StackPanel>
+			<Label Content="Extended ASCII" />
+			<TextBlock TextWrapping="Wrap" Margin="5">
+				Converting from ASCII to BRAINFUCK accepts all Extended ASCII characters. Which is roughly 190 visible ones.	
+			</TextBlock>
+			
+			<Label Content="BRAINFUCK" />
+			<TextBlock TextWrapping="Wrap" Margin="5">
+				Supports all the default BRAINFUCK options except moving memory using ','. Manages over- and underflow at 0 and 255 to optimize the BRAINFUCK code.
+			</TextBlock>
+			<TextBlock TextWrapping="Wrap" Margin="5">
+				Able to use any size of inputted BRAINFUCK memory when decoding, up to the C# List max length of 2147483647. Not quite infinite but you will most likely not run out of space!	
+			</TextBlock>
+			
+			<Label Content="Default Memory Setup" />
+			<TextBlock TextWrapping="Wrap" Margin="5">
+				The basic default memory setup is split up into nine cells plus the first cell that is used for anything else, making it a total of 10 cells. The pointer starts at cell 6.
+			</TextBlock>
+			
+			<Label Content="©Cactooz 2023" />
+			<Button x:Name="GithubButton" HorizontalAlignment="Left" Background="Transparent" Click="GithubButton_Click">
+				<Image Source="{DynamicResource GithubIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			</Button>
+		</StackPanel>
 	</Grid>
 </Page>
