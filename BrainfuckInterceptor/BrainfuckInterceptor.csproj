@@ -25,6 +25,7 @@
     <Resource Include="Content\Images\Icons\Color\close.png" />
     <Resource Include="Content\Images\Icons\Color\convert.png" />
     <Resource Include="Content\Images\Icons\Color\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Color\github.png" />
     <Resource Include="Content\Images\Icons\Color\minimize.png" />
     <Resource Include="Content\Images\Icons\Color\settings.png" />
     <Resource Include="Content\Images\Icons\Color\windowed.png" />
@@ -32,6 +33,7 @@
     <Resource Include="Content\Images\Icons\Dark\close.png" />
     <Resource Include="Content\Images\Icons\Dark\convert.png" />
     <Resource Include="Content\Images\Icons\Dark\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Dark\github.png" />
     <Resource Include="Content\Images\Icons\Dark\minimize.png" />
     <Resource Include="Content\Images\Icons\Dark\settings.png" />
     <Resource Include="Content\Images\Icons\Dark\windowed.png" />
@@ -39,6 +41,7 @@
     <Resource Include="Content\Images\Icons\Light\close.png" />
     <Resource Include="Content\Images\Icons\Light\convert.png" />
     <Resource Include="Content\Images\Icons\Light\fullscreen.png" />
+    <Resource Include="Content\Images\Icons\Light\github.png" />
     <Resource Include="Content\Images\Icons\Light\minimize.png" />
     <Resource Include="Content\Images\Icons\Light\settings.png" />
     <Resource Include="Content\Images\Icons\Light\windowed.png" />
