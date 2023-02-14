@@ -23,6 +23,7 @@
 	<BitmapImage x:Key="MinimizeIcon" UriSource="../Images/Icons/Light/minimize.png"/>
 	<BitmapImage x:Key="SettingsIcon" UriSource="../Images/Icons/Light/settings.png"/>
 	<BitmapImage x:Key="WindowedIcon" UriSource="../Images/Icons/Light/windowed.png"/>
+	<BitmapImage x:Key="GithubIcon" UriSource="../Images/Icons/Light/github.png"/>
 	
 	<!--Styling-->
 	<Style TargetType="Button">
