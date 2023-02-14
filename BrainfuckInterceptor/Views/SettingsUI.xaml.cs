@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BrainfuckInterceptor.Views
 {
@@ -23,6 +11,21 @@ namespace BrainfuckInterceptor.Views
         public SettingsUI()
         {
             InitializeComponent();
+        }
+
+        private void ThemeButton_Click(object sender, RoutedEventArgs e) {
+            Skin currentSkin = App.Skin;
+
+            switch(currentSkin) {
+                case Skin.Light:
+                ((App)Application.Current).ChangeSkin(Skin.Dark);
+                ThemeButton.Content = "Change to Light Theme";
+                break;
+                case Skin.Dark:
+                ((App)Application.Current).ChangeSkin(Skin.Light);
+                ThemeButton.Content = "Change to Dark Theme";
+                break;
+            }
         }
     }
 }

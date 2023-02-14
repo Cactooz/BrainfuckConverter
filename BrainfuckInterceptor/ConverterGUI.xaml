@@ -51,8 +51,5 @@
 				<Image Source="{DynamicResource AboutIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 			</Button>
 		</StackPanel>
-		
-		<!--<Button x:Name="ThemeButton" Grid.Column="0" Grid.Row="1" Content="Switch Theme" Margin="4" Click="ThemeButton_Click"/>-->
-		
 	</Grid>
 </Window>
