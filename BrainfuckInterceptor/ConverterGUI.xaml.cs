@@ -34,19 +34,6 @@ namespace BrainfuckInterceptor {
             WindowState = WindowState.Minimized;
         }
 
-        private void ThemeButton_Click(object sender, RoutedEventArgs e) {
-            Skin currentSkin = App.Skin;
-
-            switch(currentSkin) {
-                case Skin.Light:
-                ((App)Application.Current).ChangeSkin(Skin.Dark);
-                break;
-                case Skin.Dark:
-                ((App)Application.Current).ChangeSkin(Skin.Light);
-                break;
-            }
-        }
-
         private void ConverterButton_Click(object sender, RoutedEventArgs e) {
             ViewFrame.Source = converterUI;
         }

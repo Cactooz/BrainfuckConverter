@@ -9,6 +9,16 @@
       Title="Settings" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<Grid>
-		<Label Content="Settings" />
-    </Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="10*"/>
+		</Grid.RowDefinitions>
+
+		<Label Content="Settings" Grid.ColumnSpan="3" Grid.RowSpan="4" />
+
+		<StackPanel Grid.Row="1">
+			<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="0,0,0,10" Click="ThemeButton_Click"/>
+		</StackPanel>
+		
+	</Grid>
 </Page>
