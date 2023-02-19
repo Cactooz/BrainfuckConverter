@@ -33,5 +33,6 @@
 				<Image Source="{DynamicResource GithubIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 			</Button>
 		</StackPanel>
+		<TextBlock x:Name="CurrentVersionText" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 	</Grid>
 </Page>
