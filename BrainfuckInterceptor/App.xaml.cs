@@ -18,30 +18,41 @@ namespace BrainfuckInterceptor {
 	public partial class App:Application {
 		public static Skin Skin { get; set; }
 
-		protected override void OnStartup(StartupEventArgs e) {
+		private ResourceDictionary darkSkin;
+		private ResourceDictionary lightSkin;
+		private ResourceDictionary currentSkin;
+
+        protected override void OnStartup(StartupEventArgs e) {
 			base.OnStartup(e);
-			ChangeSkin(Skin.Dark);
-		}
+            Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Styling.xaml") });
+			darkSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Dark.xaml") };
+			lightSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Light.xaml") };
+
+            currentSkin = darkSkin;
+            ChangeSkin(Skin.Dark);
+        }
 
 		/// <summary>
 		/// Changes Program <see cref="Skin"/> to the specified <paramref name="skin"/>.
 		/// </summary>
 		/// <param name="skin">The name of the <see cref="Skin"/> to apply.</param>
 		public void ChangeSkin(Skin skin) {
-			ResourceDictionary newSkin = null;
+			ResourceDictionary oldSkin = null;
 
 			switch(skin) {
 				case Skin.Light:
-					newSkin = new ResourceDictionary{ Source = new Uri("pack://application:,,,/Content/Skins/Light.xaml") };
+					oldSkin = currentSkin;
+					currentSkin = lightSkin;
 					break;
 				case Skin.Dark:
-					newSkin = new ResourceDictionary{ Source = new Uri("pack://application:,,,/Content/Skins/Dark.xaml") };
+					oldSkin = currentSkin;
+					currentSkin = darkSkin;
 					break;
 			}
 
-			if(newSkin != null) {
-				Current.Resources.MergedDictionaries.Clear();
-				Current.Resources.MergedDictionaries.Add(newSkin);
+			if(currentSkin != null) {
+				Current.Resources.MergedDictionaries.Remove(oldSkin);
+				Current.Resources.MergedDictionaries.Add(currentSkin);
 				Skin = skin;
 			}
 		}
