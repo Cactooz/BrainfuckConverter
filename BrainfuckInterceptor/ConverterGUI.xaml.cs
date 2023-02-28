@@ -22,10 +22,12 @@ namespace BrainfuckInterceptor {
         private void FullscreenButton_Click(object sender, RoutedEventArgs e) {
 			switch(WindowState) {
 				case WindowState.Normal:
-					WindowState = WindowState.Maximized;
-					break;
+                    ResizeMode = ResizeMode.NoResize;
+                    WindowState = WindowState.Maximized;
+                    break;
 				case WindowState.Maximized:
-					WindowState = WindowState.Normal;
+                    ResizeMode = ResizeMode.CanResize;
+                    WindowState = WindowState.Normal;
 					break;
             }
         }
