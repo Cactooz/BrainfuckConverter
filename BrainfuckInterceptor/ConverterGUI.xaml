@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" WindowStyle="None" AllowsTransparency="True"
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
 		Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<!--<Window.Resources>
@@ -15,7 +15,7 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Window.Resources>-->
-	
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="30"/>
