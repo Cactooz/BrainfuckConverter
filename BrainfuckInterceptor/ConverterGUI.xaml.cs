@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace BrainfuckInterceptor {
 	/// <summary>
@@ -15,6 +16,11 @@ namespace BrainfuckInterceptor {
 			InitializeComponent();
         }
 
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e) {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
+        }
+
         private void CloseButton_Click(object sender, RoutedEventArgs e) {
 			Close();
         }
@@ -26,7 +32,7 @@ namespace BrainfuckInterceptor {
                     WindowState = WindowState.Maximized;
                     break;
 				case WindowState.Maximized:
-                    ResizeMode = ResizeMode.CanResize;
+                    ResizeMode = ResizeMode.CanResizeWithGrip;
                     WindowState = WindowState.Normal;
 					break;
             }
