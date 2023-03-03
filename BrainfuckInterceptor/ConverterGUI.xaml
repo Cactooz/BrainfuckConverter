@@ -5,7 +5,7 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:BrainfuckInterceptor"
 		mc:Ignorable="d"
-		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
+		Title="Brainfuck Converter" FontSize="14" Width="500" Height="440" MinWidth="500" MinHeight="440" WindowStyle="None" AllowsTransparency="True"
 		Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<!--<Window.Resources>
@@ -18,29 +18,33 @@
 
 	<Grid>
 		<Grid.RowDefinitions>
+			<RowDefinition Height="3"/>
 			<RowDefinition Height="30"/>
 			<RowDefinition Height="10*"/>
+			<RowDefinition Height="3"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="3"/>
 			<ColumnDefinition Width="50"/>
 			<ColumnDefinition Width="10*"/>
+			<ColumnDefinition Width="3"/>
 		</Grid.ColumnDefinitions>
 
-		<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="MinimizeButton_Click">
+		<DockPanel x:Name="Menu" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Margin="0,0,10,0" Background="Transparent" Click="MinimizeButton_Click">
 				<Image x:Name="MinimizeImage" Source="{DynamicResource MinimizeIcon}" Width="20"/>
 			</Button>
-			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="FullscreenButton_Click">
+			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Margin="0,0,10,0" Background="Transparent" Click="FullscreenButton_Click">
 				<Image x:Name="FullscreenImage" Source="{DynamicResource FullscreenIcon}" Width="20"/>
 			</Button>
-			<Button x:Name="CloseButton" HorizontalAlignment="Right" Margin="0,00,10,0" Background="Transparent" Click="CloseButton_Click">
-				<Image x:Name="CloseImage" Source="{DynamicResource CloseIcon}"  Width="20"/>
+			<Button x:Name="CloseButton" HorizontalAlignment="Right" Margin="0,0,10,0" Background="Transparent" Click="CloseButton_Click">
+				<Image x:Name="CloseImage" Source="{DynamicResource CloseIcon}" Width="20"/>
 			</Button>
-		</StackPanel>
+		</DockPanel>
 
-		<Frame x:Name="ViewFrame" Grid.Column="1" Grid.Row="1" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
+		<Frame x:Name="ViewFrame" Grid.Column="2" Grid.Row="2" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
 
-		<StackPanel Grid.Row="2" Orientation="Vertical">
+		<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
 			<Button x:Name="ConverterButton" Width="50" Height="50" Background="Transparent" Click="ConverterButton_Click">
 				<Image Source="{DynamicResource ConvertIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 			</Button>
@@ -51,5 +55,14 @@
 				<Image Source="{DynamicResource AboutIcon}" Width="32" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 			</Button>
 		</StackPanel>
+
+		<Rectangle x:Name="Left" Grid.Row="1" Grid.RowSpan="2" Fill="Transparent" Cursor="SizeWE" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="Right" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Fill="Transparent" Cursor="SizeWE" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="Top" Grid.Column="1" Grid.ColumnSpan="2" Fill="Transparent" Cursor="SizeNS"  MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="Bottom" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Fill="Transparent" Cursor="SizeNS" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="TopLeft" Fill="Transparent" Cursor="SizeNWSE" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="BottomLeft" Grid.Row="3" Fill="Transparent" Cursor="SizeNESW" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="TopRight" Grid.Column="3" Fill="Transparent" Cursor="SizeNESW" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+		<Rectangle x:Name="BottomRight" Grid.Row="3" Grid.Column="3" Fill="Transparent" Cursor="SizeNWSE" MouseMove="ResizeMove" Tag="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 	</Grid>
 </Window>
