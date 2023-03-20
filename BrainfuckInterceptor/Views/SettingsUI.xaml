@@ -1,12 +1,12 @@
 ﻿<Page x:Class="BrainfuckInterceptor.Views.SettingsUI"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:BrainfuckInterceptor"
-      mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="430"
-      Title="Settings" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:BrainfuckInterceptor"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="400" d:DesignWidth="430"
+	  Title="Settings" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -17,7 +17,15 @@
 		<Label Content="Settings" Grid.ColumnSpan="3" Grid.RowSpan="4" />
 
 		<StackPanel Grid.Row="1">
-			<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="0,0,0,10" Click="ThemeButton_Click"/>
+			<Label Content="Theme"/>
+			<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="10" Click="ThemeButton_Click"/>
+			<Label Content="BRAINFUCK Memory Setup"/>
+			<StackPanel Orientation="Horizontal">
+				<RadioButton x:Name="MemoryASCIIButton" Content="ASCII" Margin="10"/>
+				<RadioButton x:Name="MemoryExtendedASCIIButton" Content="Extended ASCII" Margin="10" IsChecked="True"/>
+				<RadioButton x:Name="MemoryLettersNumbersButton" Content="Only Letters and Numbers" Margin="10"/>
+				<RadioButton x:Name="MemoryEmptyButton" Content="Empty" Margin="10"/>
+			</StackPanel>
 		</StackPanel>
 		
 	</Grid>
