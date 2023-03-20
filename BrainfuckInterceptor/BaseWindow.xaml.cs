@@ -3,16 +3,16 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace BrainfuckInterceptor {
-	/// <summary>
-	/// Interaction logic for ConverterGUI.xaml
-	/// </summary>
-	public partial class ConverterGUI:Window {
+    /// <summary>
+    /// Interaction logic for BaseWindow.xaml
+    /// </summary>
+    public partial class BaseWindow:Window {
 
 		Uri converterUI = new Uri("Views/ConverterUI.xaml", UriKind.Relative);
         Uri settingsUI = new Uri("Views/SettingsUI.xaml", UriKind.Relative);
         Uri aboutUI = new Uri("Views/AboutUI.xaml", UriKind.Relative);
 
-		public ConverterGUI() {
+		public BaseWindow() {
 			InitializeComponent();
         }
 
