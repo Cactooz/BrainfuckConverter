@@ -8,6 +8,25 @@ namespace BrainfuckInterceptor.Views {
 	public partial class SettingsUI:Page {
 		public SettingsUI() {
 			InitializeComponent();
+
+			switch(Properties.Settings.Default.memory.ToLower()) {
+				case "extendedascii": {
+					MemoryExtendedASCIIButton.IsChecked = true;
+					break;
+				}
+				case "ascii": {
+					MemoryASCIIButton.IsChecked = true;
+					break;
+				}
+				case "lettersnumbers": {
+					MemoryLettersNumbersButton.IsChecked = true;
+					break;
+				}
+				case "empty": {
+					MemoryEmptyButton.IsChecked = true;
+					break;
+				}
+			}
 		}
 
 		private void ThemeButton_Click(object sender, RoutedEventArgs e) {
