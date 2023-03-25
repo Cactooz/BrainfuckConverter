@@ -30,18 +30,20 @@ namespace BrainfuckInterceptor.Views {
 		}
 
 		private void ThemeButton_Click(object sender, RoutedEventArgs e) {
-			Skin currentSkin = App.Skin;
-
-			switch(currentSkin) {
-				case Skin.Light:
-				((App)Application.Current).ChangeSkin(Skin.Dark);
-				ThemeButton.Content = "Change to Light Theme";
-				break;
-				case Skin.Dark:
-				((App)Application.Current).ChangeSkin(Skin.Light);
-				ThemeButton.Content = "Change to Dark Theme";
-				break;
+			switch(Properties.Settings.Default.theme.ToLower()) {
+				case "dark": {
+					Properties.Settings.Default.theme = "Light";
+					ThemeButton.Content = "Change to Dark Theme";
+					break;
+				}
+				default: {
+					Properties.Settings.Default.theme = "Dark";
+					ThemeButton.Content = "Change to Light Theme";
+					break;
+				}
 			}
+
+			((App)Application.Current).UpdateSkin();
 		}
 		private void MemoryASCIIButton_Click(object sender, RoutedEventArgs e) {
 			Properties.Settings.Default.memory = "ASCII";
