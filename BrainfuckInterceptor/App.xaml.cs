@@ -3,16 +3,9 @@ using System.Windows;
 
 namespace BrainfuckInterceptor {
 	/// <summary>
-	/// Available skins for the whole program.
-	/// </summary>
-	public enum Skin { Light, Dark }
-
-	/// <summary>
 	/// Interaction logic for App.xaml
 	/// </summary>
 	public partial class App:Application {
-		public static Skin Skin { get; set; }
-
 		private ResourceDictionary darkSkin;
 		private ResourceDictionary lightSkin;
 		private ResourceDictionary currentSkin;
