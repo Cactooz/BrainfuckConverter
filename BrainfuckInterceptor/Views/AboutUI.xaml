@@ -23,9 +23,9 @@
 				Able to use any size of inputted BRAINFUCK memory when decoding, up to the C# List max length of 2147483647. Not quite infinite but you will most likely not run out of space!	
 			</TextBlock>
 			
-			<Label Content="Default Memory Setup" />
+			<Label Content="Memory Header Options" />
 			<TextBlock TextWrapping="Wrap" Margin="5">
-				The basic default memory setup is split up into nine cells plus the first cell that is used for anything else, making it a total of 10 cells. The pointer starts at cell 6.
+				There are a few different memory headers that the program uses when encoding. The one used can be chosen in the settings. All of the work with all Extended ASCII characters but are optimized for different types of input. ASCII for 0-127, Extended ASCII for 0-255, Letters and Numbers for a-z, A-Z and 0-9, Empty for an empty memory header.
 			</TextBlock>
 			
 			<Label Content="©Cactooz 2023" />
