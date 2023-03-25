@@ -27,6 +27,17 @@ namespace BrainfuckInterceptor.Views {
 					break;
 				}
 			}
+
+			switch(Properties.Settings.Default.theme.ToLower()) {
+				case "light": {
+					ThemeButton.Content = "Change to Dark Theme";
+					break;
+				}
+				case "dark": {
+					ThemeButton.Content = "Change to Light Theme";
+					break;
+				}
+			}
 		}
 
 		private void ThemeButton_Click(object sender, RoutedEventArgs e) {
