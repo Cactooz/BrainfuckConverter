@@ -11,6 +11,7 @@ namespace BrainfuckInterceptor.Views {
 	/// </summary>
 	public partial class ConverterUI:Page {
 		private readonly MemoryHandler memoryHandler = new();
+		private readonly Decoder decoder = new();
 
 		public ConverterUI() {
 			InitializeComponent();
@@ -32,7 +33,6 @@ namespace BrainfuckInterceptor.Views {
 		}
 		private void DecodeButton_Click(object sender, RoutedEventArgs e) {
 			try {
-				Converter decoder = new();
 				OutputText.Text = decoder.Decode(InputText.Text);
 				OutputLabel.Content = "Extended ASCII Text Output";
 				OutputLabel.Visibility = Visibility.Visible;
