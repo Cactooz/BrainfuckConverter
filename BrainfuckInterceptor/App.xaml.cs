@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace BrainfuckInterceptor {
@@ -22,38 +17,48 @@ namespace BrainfuckInterceptor {
 		private ResourceDictionary lightSkin;
 		private ResourceDictionary currentSkin;
 
-        protected override void OnStartup(StartupEventArgs e) {
+		protected override void OnStartup(StartupEventArgs e) {
 			base.OnStartup(e);
-            Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Styling.xaml") });
+			Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Styling.xaml") });
 			darkSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Dark.xaml") };
 			lightSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Light.xaml") };
 
-            currentSkin = darkSkin;
-            ChangeSkin(Skin.Dark);
-        }
+			switch(BrainfuckInterceptor.Properties.Settings.Default.theme.ToLower()) {
+				case "light": {
+					currentSkin = lightSkin;
+					break;
+				}
+				default: {
+					currentSkin = darkSkin;
+					break;
+				}
+			}
+
+			UpdateSkin();
+		}
 
 		/// <summary>
 		/// Changes Program <see cref="Skin"/> to the specified <paramref name="skin"/>.
 		/// </summary>
-		/// <param name="skin">The name of the <see cref="Skin"/> to apply.</param>
-		public void ChangeSkin(Skin skin) {
+		public void UpdateSkin() {
 			ResourceDictionary oldSkin = null;
 
-			switch(skin) {
-				case Skin.Light:
+			switch(BrainfuckInterceptor.Properties.Settings.Default.theme.ToLower()) {
+				case "light": {
 					oldSkin = currentSkin;
 					currentSkin = lightSkin;
 					break;
-				case Skin.Dark:
+				}
+				case "dark": {
 					oldSkin = currentSkin;
 					currentSkin = darkSkin;
 					break;
+				}
 			}
 
 			if(currentSkin != null) {
 				Current.Resources.MergedDictionaries.Remove(oldSkin);
 				Current.Resources.MergedDictionaries.Add(currentSkin);
-				Skin = skin;
 			}
 		}
 	}
