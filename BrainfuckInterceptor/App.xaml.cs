@@ -16,6 +16,12 @@ namespace BrainfuckInterceptor {
 			darkSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Dark.xaml") };
 			lightSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Light.xaml") };
 
+			if(BrainfuckInterceptor.Properties.Settings.Default.theme == "")
+				BrainfuckInterceptor.Properties.Settings.Default.theme = "Dark";
+
+			if(BrainfuckInterceptor.Properties.Settings.Default.memory == "")
+				BrainfuckInterceptor.Properties.Settings.Default.memory = "ExtendedASCII";
+
 			switch(BrainfuckInterceptor.Properties.Settings.Default.theme.ToLower()) {
 				case "light": {
 					currentSkin = lightSkin;
