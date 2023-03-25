@@ -20,12 +20,12 @@
 			<Label Content="Theme"/>
 			<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="10" Click="ThemeButton_Click"/>
 			<Label Content="BRAINFUCK Memory Setup"/>
-			<StackPanel Orientation="Horizontal">
+			<WrapPanel  Orientation="Horizontal">
 				<RadioButton x:Name="MemoryASCIIButton" Content="ASCII" Margin="10" Click="MemoryASCIIButton_Click"/>
 				<RadioButton x:Name="MemoryExtendedASCIIButton" Content="Extended ASCII" Margin="10" Click="MemoryExtendedASCIIButton_Click"/>
 				<RadioButton x:Name="MemoryLettersNumbersButton" Content="Only Letters and Numbers" Margin="10" Click="MemoryLettersNumbersButton_Click"/>
 				<RadioButton x:Name="MemoryEmptyButton" Content="Empty" Margin="10" Click="MemoryEmptyButton_Click"/>
-			</StackPanel>
+			</WrapPanel>
 		</StackPanel>
 		
 	</Grid>
