@@ -8,25 +8,16 @@
 	  d:DesignHeight="400" d:DesignWidth="430"
 	  Title="Settings" Background="{DynamicResource Background}" Foreground="{DynamicResource Foreground}">
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="30"/>
-			<RowDefinition Height="10*"/>
-		</Grid.RowDefinitions>
+	<StackPanel>
+		<Label Content="Theme"/>
+		<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="5" Click="ThemeButton_Click"/>
 
-		<Label Content="Settings" Grid.ColumnSpan="3" Grid.RowSpan="4" />
-
-		<StackPanel Grid.Row="1">
-			<Label Content="Theme"/>
-			<Button x:Name="ThemeButton" Content="Change to Light Theme" Height="40" Margin="10" Click="ThemeButton_Click"/>
-			<Label Content="BRAINFUCK Memory Setup"/>
-			<WrapPanel  Orientation="Horizontal">
-				<RadioButton x:Name="MemoryASCIIButton" Content="ASCII" Margin="10" Click="MemoryASCIIButton_Click"/>
-				<RadioButton x:Name="MemoryExtendedASCIIButton" Content="Extended ASCII" Margin="10" Click="MemoryExtendedASCIIButton_Click"/>
-				<RadioButton x:Name="MemoryLettersNumbersButton" Content="Only Letters and Numbers" Margin="10" Click="MemoryLettersNumbersButton_Click"/>
-				<RadioButton x:Name="MemoryEmptyButton" Content="Empty" Margin="10" Click="MemoryEmptyButton_Click"/>
-			</WrapPanel>
-		</StackPanel>
-		
-	</Grid>
+		<Label Content="BRAINFUCK Memory Header"/>
+		<WrapPanel  Orientation="Horizontal">
+			<RadioButton x:Name="MemoryASCIIButton" Content="ASCII" Margin="5" Click="MemoryASCIIButton_Click"/>
+			<RadioButton x:Name="MemoryExtendedASCIIButton" Content="Extended ASCII" Margin="5" Click="MemoryExtendedASCIIButton_Click"/>
+			<RadioButton x:Name="MemoryLettersNumbersButton" Content="Only Letters and Numbers" Margin="5" Click="MemoryLettersNumbersButton_Click"/>
+			<RadioButton x:Name="MemoryEmptyButton" Content="Empty" Margin="5" Click="MemoryEmptyButton_Click"/>
+		</WrapPanel>
+	</StackPanel>
 </Page>
