@@ -1,6 +1,7 @@
 ﻿using BrainfuckInterceptor.Scripts;
 using BrainfuckInterceptor.Scripts.Memory;
 using System;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,12 +13,19 @@ namespace BrainfuckInterceptor.Views {
 	public partial class ConverterUI:Page {
 		private readonly MemoryHandler memoryHandler = new();
 		private readonly Decoder decoder = new();
+		private static readonly string tmpFilePath = Path.GetFullPath(Path.Combine(Path.GetTempPath(), "BFI.tmp"));
+
+		internal static string TmpFilePath { get => tmpFilePath; }
 
 		public ConverterUI() {
 			InitializeComponent();
 			OutputLabel.Visibility = Visibility.Collapsed;
 			OutputText.Visibility = Visibility.Collapsed;
 			CopyButton.Visibility = Visibility.Collapsed;
+
+			if(File.Exists(tmpFilePath)) {
+				InputText.Text = File.ReadAllText(tmpFilePath);
+			}
 		}
 
 		private void EncodeButton_Click(object sender, RoutedEventArgs e) {
@@ -68,6 +76,8 @@ namespace BrainfuckInterceptor.Views {
 			} catch(Exception error) {
 				MessageBox.Show(error.Message);
 			}
+
+			File.WriteAllText(tmpFilePath, InputText.Text);
 		}
 	}
 }
