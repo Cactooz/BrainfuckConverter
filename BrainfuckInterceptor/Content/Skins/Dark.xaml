@@ -15,13 +15,21 @@
 	<SolidColorBrush x:Key="ButtonDisabledForeground" Color="#FF303030"/>
 	<SolidColorBrush x:Key="ButtonPressedBackground" Color="#FF202020"/>
 
-	<!--Icon Images-->
-	<BitmapImage x:Key="AboutIcon" UriSource="../Images/Icons/Light/about.png"/>
-	<BitmapImage x:Key="ConvertIcon" UriSource="../Images/Icons/Light/convert.png"/>
-	<BitmapImage x:Key="CloseIcon" UriSource="../Images/Icons/Light/close.png"/>
-	<BitmapImage x:Key="FullscreenIcon" UriSource="../Images/Icons/Light/fullscreen.png"/>
-	<BitmapImage x:Key="MinimizeIcon" UriSource="../Images/Icons/Light/minimize.png"/>
-	<BitmapImage x:Key="SettingsIcon" UriSource="../Images/Icons/Light/settings.png"/>
-	<BitmapImage x:Key="WindowedIcon" UriSource="../Images/Icons/Light/windowed.png"/>
-	<BitmapImage x:Key="GithubIcon" UriSource="../Images/Icons/Light/github.png"/>
+	<!--Icons-->
+	<ImageBrush x:Key="AboutIcon" ImageSource="../Images/Icons/Light/about.png" Stretch="Fill"/>
+	<ImageBrush x:Key="AboutIconContrast" ImageSource="../Images/Icons/Color/about.png" Stretch="Fill"/>
+	<ImageBrush x:Key="ConvertIcon" ImageSource="../Images/Icons/Light/convert.png" Stretch="Fill"/>
+	<ImageBrush x:Key="ConvertIconContrast" ImageSource="../Images/Icons/Color/convert.png" Stretch="Fill"/>
+	<ImageBrush x:Key="CloseIcon" ImageSource="../Images/Icons/Light/close.png" Stretch="Fill"/>
+	<ImageBrush x:Key="CloseIconContrast" ImageSource="../Images/Icons/Color/close.png" Stretch="Fill"/>
+	<ImageBrush x:Key="FullscreenIcon" ImageSource="../Images/Icons/Light/fullscreen.png" Stretch="Fill"/>
+	<ImageBrush x:Key="FullscreenIconContrast" ImageSource="../Images/Icons/Color/fullscreen.png" Stretch="Fill"/>
+	<ImageBrush x:Key="MinimizeIcon" ImageSource="../Images/Icons/Light/minimize.png" Stretch="Fill"/>
+	<ImageBrush x:Key="MinimizeIconContrast" ImageSource="../Images/Icons/Color/minimize.png" Stretch="Fill"/>
+	<ImageBrush x:Key="SettingsIcon" ImageSource="../Images/Icons/Light/settings.png" Stretch="Fill"/>
+	<ImageBrush x:Key="SettingsIconContrast" ImageSource="../Images/Icons/Color/settings.png" Stretch="Fill"/>
+	<ImageBrush x:Key="WindowedIcon" ImageSource="../Images/Icons/Light/windowed.png" Stretch="Fill"/>
+	<ImageBrush x:Key="WindowedIconContrast" ImageSource="../Images/Icons/Color/windowed.png" Stretch="Fill"/>
+	<ImageBrush x:Key="GithubIcon" ImageSource="../Images/Icons/Light/github.png" Stretch="Fill"/>
+	<ImageBrush x:Key="GithubIconContrast" ImageSource="../Images/Icons/Color/github.png" Stretch="Fill"/>
 </ResourceDictionary>
