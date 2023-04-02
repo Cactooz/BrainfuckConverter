@@ -38,9 +38,6 @@
 						<Trigger Property="IsMouseOver" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource ConvertIconContrast}" />
 						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource ConvertIconContrast}" />
-						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
@@ -55,9 +52,6 @@
 					<Border x:Name="border" BorderThickness="0" Background="{DynamicResource SettingsIcon}"/>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsMouseOver" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource SettingsIconContrast}" />
-						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource SettingsIconContrast}" />
 						</Trigger>
 					</ControlTemplate.Triggers>
@@ -76,9 +70,6 @@
 						<Trigger Property="IsMouseOver" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource AboutIconContrast}" />
 						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource AboutIconContrast}" />
-						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
@@ -93,9 +84,6 @@
 					<Border x:Name="border" BorderThickness="0" Background="{DynamicResource CloseIcon}"/>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsMouseOver" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource CloseIconContrast}" />
-						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource CloseIconContrast}" />
 						</Trigger>
 					</ControlTemplate.Triggers>
@@ -114,9 +102,6 @@
 						<Trigger Property="IsMouseOver" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource FullscreenIconContrast}" />
 						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource FullscreenIconContrast}" />
-						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
@@ -133,9 +118,6 @@
 						<Trigger Property="IsMouseOver" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource MinimizeIconContrast}" />
 						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource MinimizeIconContrast}" />
-						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
@@ -150,9 +132,6 @@
 					<Border x:Name="border" BorderThickness="0" Background="{DynamicResource GithubIcon}"/>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsMouseOver" Value="True">
-							<Setter Property="Background" TargetName="border" Value="{DynamicResource GithubIconContrast}" />
-						</Trigger>
-						<Trigger Property="IsPressed" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource GithubIconContrast}" />
 						</Trigger>
 					</ControlTemplate.Triggers>
