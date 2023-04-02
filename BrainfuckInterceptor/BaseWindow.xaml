@@ -35,9 +35,9 @@
 		<Frame x:Name="ViewFrame" Grid.Column="1" Grid.Row="1" Margin="10" Source="Views/ConverterUI.xaml" NavigationUIVisibility="Hidden" />
 
 		<StackPanel Grid.Row="2" Orientation="Vertical">
-			<Button x:Name="ConverterButton" Width="50" Height="50" Style="{DynamicResource ConvertButtonIcon}" Click="ConverterButton_Click"/>
-			<Button x:Name="SettingsButton" Width="50" Height="50" Style="{DynamicResource SettingsButtonIcon}" Click="SettingsButton_Click"/>
-			<Button x:Name="AboutButton" Width="50" Height="50" Style="{DynamicResource AboutButtonIcon}" Click="AboutButton_Click"/>
+			<ToggleButton x:Name="ConverterButton" Width="50" Height="50" Style="{DynamicResource ConvertButtonIcon}" Checked="ConverterButton_Click"/>
+			<ToggleButton x:Name="SettingsButton" Width="50" Height="50" Style="{DynamicResource SettingsButtonIcon}" Checked="SettingsButton_Click"/>
+			<ToggleButton x:Name="AboutButton" Width="50" Height="50" Style="{DynamicResource AboutButtonIcon}" Checked="AboutButton_Click"/>
 		</StackPanel>
 	</Grid>
 </Window>

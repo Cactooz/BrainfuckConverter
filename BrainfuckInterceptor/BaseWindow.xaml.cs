@@ -15,6 +15,7 @@ namespace BrainfuckInterceptor {
 
 		public BaseWindow() {
 			InitializeComponent();
+			ConverterButton.IsChecked = true;
 		}
 
 		protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e) {
@@ -47,14 +48,21 @@ namespace BrainfuckInterceptor {
 
 		private void ConverterButton_Click(object sender, RoutedEventArgs e) {
 			ViewFrame.Source = converterUI;
+			SettingsButton.IsChecked = false;
+			AboutButton.IsChecked = false;
+
 		}
 
 		private void SettingsButton_Click(object sender, RoutedEventArgs e) {
 			ViewFrame.Source = settingsUI;
+			ConverterButton.IsChecked = false;
+			AboutButton.IsChecked = false;
 		}
 
 		private void AboutButton_Click(object sender, RoutedEventArgs e) {
 			ViewFrame.Source = aboutUI;
+			ConverterButton.IsChecked = false;
+			SettingsButton.IsChecked = false;
 		}
 	}
 }
