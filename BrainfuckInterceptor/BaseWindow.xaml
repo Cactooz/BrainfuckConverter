@@ -28,7 +28,7 @@
 
 		<StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button x:Name="MinimizeButton" HorizontalAlignment="Right" Width="30" Margin="0,00,10,0" Style="{DynamicResource MinimizeButtonIcon}" Click="MinimizeButton_Click"/>
-			<Button x:Name="FullscreenButton" HorizontalAlignment="Right" Width="30" Margin="0,00,10,0" Style="{DynamicResource FullscreenButtonIcon}" Click="FullscreenButton_Click"/>
+			<ToggleButton x:Name="FullscreenButton" HorizontalAlignment="Right" Width="30" Margin="0,00,10,0" Style="{DynamicResource FullscreenButtonIcon}" Click="FullscreenButton_Click"/>
 			<Button x:Name="CloseButton" HorizontalAlignment="Right" Width="30" Margin="0,00,10,0" Style="{DynamicResource CloseButtonIcon}" Click="CloseButton_Click"/>
 		</StackPanel>
 
