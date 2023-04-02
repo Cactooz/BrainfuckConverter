@@ -92,16 +92,26 @@
 		</Setter>
 	</Style>
 
-	<Style x:Key="FullscreenButtonIcon" TargetType="Button">
+	<Style x:Key="FullscreenButtonIcon" TargetType="ToggleButton">
 		<Setter Property="Cursor" Value="Hand"/>
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate TargetType="Button">
+				<ControlTemplate TargetType="ToggleButton">
 					<Border x:Name="border" BorderThickness="0" Background="{DynamicResource FullscreenIcon}"/>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsMouseOver" Value="True">
 							<Setter Property="Background" TargetName="border" Value="{DynamicResource FullscreenIconContrast}" />
 						</Trigger>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Background" TargetName="border" Value="{DynamicResource WindowedIcon}"/>
+						</Trigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition Property="IsChecked" Value="True"/>
+								<Condition Property="IsMouseOver" Value="True"/>
+							</MultiTrigger.Conditions>
+							<Setter Property="Background" TargetName="border" Value="{DynamicResource WindowedIconContrast}"/>
+						</MultiTrigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
