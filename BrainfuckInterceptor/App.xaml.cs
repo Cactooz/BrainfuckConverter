@@ -12,7 +12,6 @@ namespace BrainfuckInterceptor {
 
 		protected override void OnStartup(StartupEventArgs e) {
 			base.OnStartup(e);
-			Current.Resources.MergedDictionaries.Add(new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Styling.xaml") });
 			darkSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Dark.xaml") };
 			lightSkin = new ResourceDictionary { Source = new Uri("pack://application:,,,/Content/Skins/Light.xaml") };
 

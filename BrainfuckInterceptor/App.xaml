@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:BrainfuckInterceptor"
              StartupUri="BaseWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Content/Styling.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>
