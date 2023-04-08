@@ -13,7 +13,7 @@
 					output += GetCode(inputChar, 2);
 				else if(inputChar >= 97 && inputChar <= 122)
 					output += GetCode(inputChar, 3);
-				else if(inputChar >= 48 && inputChar <= 57)
+				else if(inputChar >= 44 && inputChar <= 57)
 					output += GetCode(inputChar, 1);
 				else
 					output += GetCode(inputChar, 0);
