@@ -26,6 +26,10 @@ namespace BrainfuckInterceptor.Views {
 					MemoryEmptyButton.IsChecked = true;
 					break;
 				}
+				case "auto": {
+					MemoryAutoButton.IsChecked = true;
+					break;
+				}
 			}
 
 			switch(Properties.Settings.Default.theme.ToLower()) {
