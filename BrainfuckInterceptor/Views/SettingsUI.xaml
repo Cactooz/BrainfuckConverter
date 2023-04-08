@@ -18,6 +18,7 @@
 			<RadioButton x:Name="MemoryExtendedASCIIButton" Content="Extended ASCII" Margin="5" Click="MemoryExtendedASCIIButton_Click"/>
 			<RadioButton x:Name="MemoryLettersNumbersButton" Content="Only Letters and Numbers" Margin="5" Click="MemoryLettersNumbersButton_Click"/>
 			<RadioButton x:Name="MemoryEmptyButton" Content="Empty" Margin="5" Click="MemoryEmptyButton_Click"/>
+			<RadioButton x:Name="MemoryAutoButton" Content="Auto" Margin="5" Click="MemoryAutoButton_Click"/>
 		</WrapPanel>
 	</StackPanel>
 </Page>
