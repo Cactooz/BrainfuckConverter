@@ -7,7 +7,7 @@ namespace BrainfuckInterceptor.Scripts.Memory {
 		private readonly MemoryLettersNumbers lettersNumbers = new();
 
 		public override string Encode(string inputText) {
-			if(Regex.IsMatch(inputText, @"^[a-zA-Z0-9.,]+$"))
+			if(Regex.IsMatch(inputText, @"^[a-zA-Z0-9., ]+$"))
 				return lettersNumbers.Encode(inputText);
 			
 			if(Regex.IsMatch(inputText, @"^[\x00-\x7F]+$"))
