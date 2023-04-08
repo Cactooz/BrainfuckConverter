@@ -19,7 +19,7 @@ namespace BrainfuckInterceptor {
 				BrainfuckInterceptor.Properties.Settings.Default.theme = "Dark";
 
 			if(BrainfuckInterceptor.Properties.Settings.Default.memory == "")
-				BrainfuckInterceptor.Properties.Settings.Default.memory = "ExtendedASCII";
+				BrainfuckInterceptor.Properties.Settings.Default.memory = "Auto";
 
 			switch(BrainfuckInterceptor.Properties.Settings.Default.theme.ToLower()) {
 				case "light": {
