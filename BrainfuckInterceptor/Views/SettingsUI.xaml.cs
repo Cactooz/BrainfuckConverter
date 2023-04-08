@@ -68,5 +68,8 @@ namespace BrainfuckInterceptor.Views {
 		private void MemoryEmptyButton_Click(object sender, RoutedEventArgs e) {
 			Properties.Settings.Default.memory = "Empty";
 		}
+		private void MemoryAutoButton_Click(object sender, RoutedEventArgs e) {
+			Properties.Settings.Default.memory = "Auto";
+		}
 	}
 }
